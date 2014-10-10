@@ -22,7 +22,7 @@ uniform mat3  m2;\
 uniform mat4  m3;\
 uniform float d0,d1,d2,d3;\
 void main() {\
-  gl_FragColor = 100.0 * vec4(\
+  gl_FragColor = vec4(\
     abs(det(m0) - d0),\
     abs(det(m1) - d1),\
     abs(det(m2) - d2),\
@@ -48,13 +48,13 @@ function runTest(m0, m1, m2, m3) {
   var result = new Uint8Array(4)
   gl.readPixels(0, 0, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, result)
 
-  if(result[0] > 0 ||
-     result[1] > 0 ||
-     result[2] > 0 ||
-     result[3] > 0) {
-    console.log('fail', result[0], result[1], result[2], result[3])
-  } else {
-    console.log('ok')
+  var matrices = [m0,m1,m2,m3]
+  for(var i=0; i<4; ++i) {
+    if(result[i] > 0) {
+      console.log('fail', matrices[i], result[i])
+    } else {
+      console.log('ok')
+    }
   }
 }
 

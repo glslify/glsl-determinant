@@ -1,0 +1,40 @@
+{
+  "name": "glsl-determinant",
+  "version": "1.0.0",
+  "description": "Computes the determinant of a matrix in glsl",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "a-big-triangle": "^1.0.0",
+    "gl-mat2": "^1.0.0",
+    "gl-mat3": "^1.0.0",
+    "gl-mat4": "^1.0.0",
+    "glslify": "^1.6.0"
+  },
+  "scripts": {
+    "test": "beefy example/example.js --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stackgl/glsl-determinant.git"
+  },
+  "keywords": [
+    "determinant",
+    "matrix",
+    "glsl",
+    "glslify"
+  ],
+  "author": "Mikola Lysenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stackgl/glsl-determinant/issues"
+  },
+  "browserify": {
+    "transform": "glslify"
+  },
+  "homepage": "https://github.com/stackgl/glsl-determinant"
+}
