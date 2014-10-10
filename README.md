@@ -1,19 +1,19 @@
-# glsl-transpose
-Transpose a matrix in GLSL.
+# glsl-determinant
+Computes the determinant of a matrix in glsl
 
 # Example
 
 ```glsl
-#pragma glslify: transpose = require(glsl-transpose)
+#pragma glslify: det = require(glsl-determinant)
 
 void main() {
   mat3 m = mat3(1, 2, 3,
                 4, 5, 6,
                 7, 8, 9);
 
-  mat3 mt = transpose(m);
+  float d = det(m);
 
-  //now mt is the transpose of m
+  //d is the determinant of m (0 in this case)
 }
 ```
 
@@ -22,7 +22,7 @@ void main() {
 Install with npm:
 
 ```
-npm install glsl-transpose
+npm install glsl-determinant
 ```
 
 Then use with [glslify](https://github.com/stackgl/glslify).
@@ -30,15 +30,15 @@ Then use with [glslify](https://github.com/stackgl/glslify).
 # API
 
 ```glsl
-#pragma glslify: transpose = require(glsl-transpose)
+#pragma glslify: determinant = require(glsl-determinant)
 ```
 
-### `mt = transpose(float|mat2|mat3|mat4 m)`
-Computes the transpose of a matrix
+### `float d = determinant(float|mat2|mat3|mat4 m)`
+Computes the determinant of a matrix
 
-* `m` is a matrix to transpose, either `float, mat2, mat3` or `mat4`
+* `m` is a matrix, either `float, mat2, mat3` or `mat4`
 
-**Returns** The transpose of `m`
+**Returns** The determinant of `m`
 
 # License
 (c) 2014 Mikola Lysenko. MIT License
